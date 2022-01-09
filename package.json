@@ -4,14 +4,19 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "sls offline",
+    "deploy": "sls deploy -v",
+    "dynamo:start": "sls dynamodb start"
   },
   "engines": {
     "node": ">=14.15.0"
   },
   "dependencies": {
     "@middy/core": "^2.5.3",
-    "@middy/http-json-body-parser": "^2.5.3"
+    "@middy/http-json-body-parser": "^2.5.3",
+    "esbuild": "^0.14.11",
+    "serverless-dynamodb-local": "0.2.39",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.23.0",
@@ -20,6 +25,7 @@
     "json-schema-to-ts": "^1.5.0",
     "serverless": "^2.23.0",
     "serverless-esbuild": "^1.17.1",
+    "serverless-offline": "^8.3.1",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.1.3"
